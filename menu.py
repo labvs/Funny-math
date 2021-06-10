@@ -506,12 +506,12 @@ def setting(name, level):
         button("ок", 50, display_height/4 + 225, display_width / 3 - 100, 75, blue, bright_blue, "change")
         # кнопки для влючения/выключения звука
         button("вкл", 75, 2*display_height/3 + 100, 150, 75, blue, bright_blue, "sound")
-        button("выкл", 275, 2*display_height/3+ 100, 150, 75, blue, bright_blue, "sound_stop")
-        button("ДАЛЕЕ",display_width*0.75, 500, 350, 100, blue, bright_blue, "level")
+        button("выкл", display_width/3 - 225, 2*display_height/3+ 100, 150, 75, blue, bright_blue, "sound_stop")
+        button("ДАЛЕЕ",display_width*0.75, display_height*0.75 - 125, 350, 100, blue, bright_blue, "level")
         # кнопки для выбора уровня
-        button("ЛЕГКИЙ",display_width/3  + 85, display_height/4, 350, 150, blue, bright_blue, "lite")
-        button("СРЕДНИЙ",display_width/3  + 85, display_height/4 + 195, 350, 150, blue, bright_blue, "medium")
-        button("СЛОЖНЫЙ",display_width/3 + 85, display_height*0.75 - 50, 350, 150, blue, bright_blue, "hard")
+        button("ЛЕГКИЙ",display_width/3 + 85, display_height/4, display_width/3 - 170, 150, blue, bright_blue, "lite")
+        button("СРЕДНИЙ",display_width/3 + 85, display_height/4 + 195, display_width/3 - 170, 150, blue, bright_blue, "medium")
+        button("СЛОЖНЫЙ",display_width/3 + 85, display_height/4 + 390, display_width/3 - 170, 150, blue, bright_blue, "hard")
         button("НАЗАД",display_width*0.75, display_height*0.75, 350, 100, blue, bright_blue, "menu")
         pygame.display.update()
         clock.tick(50)
