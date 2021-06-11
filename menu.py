@@ -218,11 +218,11 @@ def levels():
         TextRect.center = ((display_width / 2),(50))
         gamedisplays.blit(TextSurf,TextRect)
 
-        button("СЛОЖЕНИЕ",  display_width / 2 - 200, display_height*0.1 + 50,  400, 100, blue, bright_blue, "addition")
-        button("ВЫЧИТАНИЕ", display_width / 2 - 200, display_height*0.1 + 200, 400, 100, blue, bright_blue, "subtraction")
-        button("УМНОЖЕНИЕ", display_width / 2 - 200, display_height*0.1 + 350, 400, 100, blue, bright_blue, "multiplication")
-        button("ДЕЛЕНИЕ",   display_width / 2 - 200, display_height*0.1 + 500, 400, 100, blue, bright_blue, "division")
-        button("СМЕШАННЫЙ", display_width / 2 - 200, display_height*0.1 + 650, 400, 100, blue, bright_blue, "all")
+        button("СЛОЖЕНИЕ",  display_width / 2 - 200,   display_height/6, 400, display_height/8, blue, bright_blue, "addition")
+        button("ВЫЧИТАНИЕ", display_width / 2 - 200,   display_height/3, 400, display_height/8, blue, bright_blue, "subtraction")
+        button("УМНОЖЕНИЕ", display_width / 2 - 200,   display_height/2, 400, display_height/8, blue, bright_blue, "multiplication")
+        button("ДЕЛЕНИЕ",   display_width / 2 - 200, 2*display_height/3, 400, display_height/8, blue, bright_blue, "division")
+        button("СМЕШАННЫЙ", display_width / 2 - 200, 5*display_height/6, 400, display_height/8, blue, bright_blue, "all")
         button("НАЗАД",display_width*0.75, display_height*0.75, 350, 100, blue, bright_blue, "menu")
         pygame.display.update()
         clock.tick(50)
@@ -276,7 +276,7 @@ def instruction():
         RtextRect = (0, display_height - 55)
         gamedisplays.blit(RtextSurf, RtextRect)
         
-        button(">",display_width/2 - 100, display_height - 60, 100, 55, blue, bright_blue, "video")
+        button(">",display_width/2 - 50, display_height - 60, 100, 55, blue, bright_blue, "video")
         
         button("НАЗАД",display_width*0.75, display_height*0.75, 350, 100, blue, bright_blue, "menu")
         pygame.display.update()
