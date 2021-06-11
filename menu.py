@@ -98,10 +98,10 @@ def main_menu():
         TextRect.center = (display_width/2, 150)
         gamedisplays.blit(TextSurf, TextRect)
         # отрисовка кнопок главного меню и присваивание им названия событий
-        button("ИГРАТЬ",     display_width / 2 - 200, display_height*0.09,       400, 150, blue, bright_blue,  "play")
-        button("РЕЙТИНГ",    display_width / 2 - 200, display_height*0.09 + 200, 400, 150, blue, bright_blue, "score")
-        button("УПРАВЛЕНИЕ", display_width / 2 - 200, display_height*0.09 + 400, 400, 150, blue, bright_blue, "intro")
-        button("ВЫХОД",      display_width / 2 - 200, display_height*0.09 + 600, 400, 100, blue, bright_blue,  "quit")
+        button("ИГРАТЬ",     display_width / 2 - 200,   display_height/9, 400, display_height/6, blue, bright_blue,  "play")
+        button("РЕЙТИНГ",    display_width / 2 - 200,   display_height/3, 400, display_height/6, blue, bright_blue, "score")
+        button("УПРАВЛЕНИЕ", display_width / 2 - 200, 5*display_height/9, 400, display_height/6, blue, bright_blue, "intro")
+        button("ВЫХОД",      display_width / 2 - 200, 7*display_height/9, 400, display_height/10, blue, bright_blue,  "quit")
         
         pygame.display.update()
         # игра будет работать со скоростью не более 50 кадров в секунду
@@ -324,7 +324,7 @@ def score(choice):
     Выходные данные: отображение на экране рейтинга всех игроков или отображение всех игр введенного пользователя
     '''
     # создание поля для ввода имени и фамилии игрока
-    input_box = InputBox(display_width*2/3 + 60, 250, 250, 52)
+    input_box = InputBox(display_width*2/3 + 60, display_height/6 + 100, 250, 52)
     input_boxes = [input_box]
     clock = pygame.time.Clock()
     arr = []
@@ -465,7 +465,7 @@ def setting(name, level):
     '''
     clock = pygame.time.Clock()
     # создание поля для ввода имени и фамилии игрока
-    input_box1 = InputBox(55, 340, 250, 52)
+    input_box1 = InputBox(55, display_height/4 + 100, 250, 52)
     input_boxes = [input_box1]
     main = True
     global name_surn
@@ -499,8 +499,8 @@ def setting(name, level):
         text(name,2*display_width/3 + 15, 200, 45)
         gamedisplays.blit(TextSurf,TextRect)
 
-        text("ТВОИ ИМЯ И", 100, 225, 50)
-        text("ФАМИЛИЯ: ", 115, 275, 50)
+        text("ТВОИ ИМЯ И", 100, display_height/4, 50)
+        text("ФАМИЛИЯ: ", 115, display_height/4 + 50, 50)
         text("уровень: " + level, 2*display_width/3 + 15, 250, 45)
 
         button("ок", 50, display_height/4 + 225, display_width / 3 - 100, 75, blue, bright_blue, "change")
