@@ -57,10 +57,10 @@ conn = sqlite3.connect('resources/scores.db')
 cur = conn.cursor()
 
 #задание шрифтов
-font = pygame.font.SysFont('arial', 32)
-largetext = pygame.font.Font('resources/fonts/20421.ttf', 100)
-smalltext = pygame.font.Font('resources/fonts/20421.ttf', 55)
-mediumtext = pygame.font.Font('resources/fonts/20421.ttf', 80)
+font = pygame.font.SysFont('arial', display_width//48)
+largetext = pygame.font.Font('resources/fonts/20421.ttf', display_width//16)
+smalltext = pygame.font.Font('resources/fonts/20421.ttf', display_width//28)
+mediumtext = pygame.font.Font('resources/fonts/20421.ttf', display_width//19)
 
 #создание таблицы базы данных, если такой не существует
 cur.execute("""CREATE TABLE IF NOT EXISTS users(
@@ -245,38 +245,38 @@ def instruction():
         gamedisplays.blit(TextSurf, TextRect)
         
         ktextSurf, ktextRect = text_objects("Перед началом игры убедись, что камера подключена!", smalltext)
-        ktextRect.center = ((display_width/2), (175))
+        ktextRect.center = ((display_width/2), (display_height/5))
         gamedisplays.blit(ktextSurf, ktextRect)
 
         textSurf, textRect = text_objects("Управлять игрой можно с помощью жестов!", smalltext)
-        textRect.center = ((display_width / 2), (250))
+        textRect.center = ((display_width / 2), (3*display_height/10))
         gamedisplays.blit(textSurf, textRect)
 
         sTextSurf, sTextRect = text_objects("МАХНИ", mediumtext)
-        sTextRect.center = ((display_width / 2), 325)
+        sTextRect.center = ((display_width / 2), (2*display_height/5 + 20))
         gamedisplays.blit(sTextSurf, sTextRect)
         
         stextSurf, stextRect = text_objects("ВЛЕВО и ВВЕРХ, если правильный ответ в СИНЕМ квадрате.", smalltext)
-        stextRect = (0, 375)
+        stextRect = (0, (display_height//2))
         gamedisplays.blit(stextSurf, stextRect)
         
         hTextSurf, hTextRect = text_objects("ВПРАВО и ВВЕРХ - если в ЖЁЛТОМ.", smalltext)
-        hTextRect = (0, 475)
+        hTextRect = (0, (3*display_height/5))
         gamedisplays.blit(hTextSurf, hTextRect)
         
         atextSurf, atextRect = text_objects("ВЛЕВО и ВНИЗ - если в ЗЕЛЁНОМ.", smalltext)
-        atextRect = (0, 575)
+        atextRect = (0, (7*display_height/10))
         gamedisplays.blit(atextSurf, atextRect)
         
         rtextSurf, rtextRect = text_objects("ВПРАВО и ВНИЗ - если в КРАСНОМ.", smalltext)
-        rtextRect = (0, 675)
+        rtextRect = (0, (4*display_height/5))
         gamedisplays.blit(rtextSurf, rtextRect)
         
         RtextSurf, RtextRect = text_objects("Посмотреть, как играть:", smalltext)
-        RtextRect = (0, display_height - 55)
+        RtextRect = (0, (9*display_height/10))
         gamedisplays.blit(RtextSurf, RtextRect)
         
-        button(">",display_width/2 - 50, display_height - 60, 100, 55, blue, bright_blue, "video")
+        button(">",display_width/2 - 50, (9*display_height/10), 100, 55, blue, bright_blue, "video")
         
         button("НАЗАД",display_width*0.75, display_height*0.75, 350, 100, blue, bright_blue, "menu")
         pygame.display.update()
@@ -497,21 +497,21 @@ def setting(name, level):
         TextSurf, TextRect = text_objects("ВВЕДИ ИМЯ И ФАМИЛИЮ:", largetext)
         TextRect.center = (display_width / 2, (50))
         text(name,2*display_width/3 + 15, 200, 45)
-        gamedisplays.blit(TextSurf,TextRect)
+        gamedisplays.blit(TextSurf, TextRect)
 
         text("ТВОИ ИМЯ И", 100, display_height/4, 50)
-        text("ФАМИЛИЯ: ", 115, display_height/4 + 50, 50)
+        text("ФАМИЛИЯ: ",  115, display_height/4 + 50, 50)
         text("уровень: " + level, 2*display_width/3 + 15, 250, 45)
 
         button("ок", 50, display_height/4 + 225, display_width / 3 - 100, 75, blue, bright_blue, "change")
         # кнопки для влючения/выключения звука
         button("вкл", 75, 2*display_height/3 + 100, 150, 75, blue, bright_blue, "sound")
-        button("выкл", display_width/3 - 225, 2*display_height/3+ 100, 150, 75, blue, bright_blue, "sound_stop")
-        button("ДАЛЕЕ",display_width*0.75, display_height*0.75 - 125, 350, 100, blue, bright_blue, "level")
+        button("выкл", display_width/3 - 225, 2*display_height/3 + 100, 150,  75, blue, bright_blue, "sound_stop")
+        button("ДАЛЕЕ",display_width*0.75,   display_height*0.75 - 125, 350, 100, blue, bright_blue, "level")
         # кнопки для выбора уровня
-        button("ЛЕГКИЙ",display_width/3 + 85, display_height/4, display_width/3 - 170, 150, blue, bright_blue, "lite")
-        button("СРЕДНИЙ",display_width/3 + 85, display_height/4 + 195, display_width/3 - 170, 150, blue, bright_blue, "medium")
-        button("СЛОЖНЫЙ",display_width/3 + 85, display_height/4 + 390, display_width/3 - 170, 150, blue, bright_blue, "hard")
+        button("ЛЕГКИЙ", display_width/3 + 85, display_height/4,        display_width/3 - 170, 150, blue, bright_blue,   "lite")
+        button("СРЕДНИЙ",display_width/3 + 85, display_height/4 + 195,  display_width/3 - 170, 150, blue, bright_blue, "medium")
+        button("СЛОЖНЫЙ",display_width/3 + 85, display_height/4 + 390,  display_width/3 - 170, 150, blue, bright_blue,   "hard")
         button("НАЗАД",display_width*0.75, display_height*0.75, 350, 100, blue, bright_blue, "menu")
         pygame.display.update()
         clock.tick(50)
