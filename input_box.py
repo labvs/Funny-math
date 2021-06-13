@@ -44,7 +44,7 @@ class InputBox:
 
     def update(self):
         # изменение размера поля, если текст слишком длинный
-        width = max(400, self.txt_surface.get_width()+10)
+        width = max(self.rect.w, self.txt_surface.get_width()+10)
         self.rect.w = width
         return name 
 

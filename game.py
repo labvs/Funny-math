@@ -423,3 +423,4 @@ def game(name_student, level, x):
 
     cap.release()
     cv2.destroyAllWindows()
+    menu.setting(name_student, level)

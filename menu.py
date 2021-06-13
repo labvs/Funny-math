@@ -324,7 +324,7 @@ def score(choice):
     Выходные данные: отображение на экране рейтинга всех игроков или отображение всех игр введенного пользователя
     '''
     # создание поля для ввода имени и фамилии игрока
-    input_box = InputBox(display_width*2/3 + 60, display_height/6 + 100, 250, 52)
+    input_box = InputBox(display_width*2/3 + 60, display_height/6 + 100, display_width/3 - 120, 52)
     input_boxes = [input_box]
     clock = pygame.time.Clock()
     arr = []
@@ -356,7 +356,7 @@ def score(choice):
             name_surn = box.update()
 
         gamedisplays.blit(instruction_background, (0, 0))
-        pygame.draw.rect(gamedisplays, blue, (display_width*2/3,display_height/8, display_width/3, 325), border_radius = 15) 
+        pygame.draw.rect(gamedisplays, blue, (display_width*2/3, display_height/8, display_width/3, 325), border_radius = 15)
         for box in input_boxes:
             box.draw(gamedisplays)
 
@@ -465,7 +465,7 @@ def setting(name, level):
     '''
     clock = pygame.time.Clock()
     # создание поля для ввода имени и фамилии игрока
-    input_box1 = InputBox(55, display_height/4 + 100, 250, 52)
+    input_box1 = InputBox(55, display_height/4 + 100, display_width/3 - 110, 52)
     input_boxes = [input_box1]
     main = True
     global name_surn
